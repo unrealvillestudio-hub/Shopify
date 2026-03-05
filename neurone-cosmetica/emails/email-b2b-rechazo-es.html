@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sobre tu solicitud profesional — Neurone Cosmética</title>
+</head>
+<body style="margin:0;padding:0;background:#f4f4f4;font-family:'Helvetica Neue',Arial,sans-serif;">
+  <table width="100%" cellpadding="0" cellspacing="0" style="background:#f4f4f4;padding:40px 20px;">
+    <tr>
+      <td align="center">
+        <table width="600" cellpadding="0" cellspacing="0" style="background:#ffffff;border-radius:8px;overflow:hidden;max-width:600px;">
+
+          <!-- HEADER -->
+          <tr>
+            <td style="background:#0a0a0a;padding:32px 40px;text-align:center;">
+              <p style="margin:0;font-size:22px;font-weight:700;color:#ffffff;letter-spacing:2px;">NEURONE COSMÉTICA</p>
+              <p style="margin:6px 0 0;font-size:11px;color:#888;letter-spacing:3px;text-transform:uppercase;">Canal Profesional</p>
+            </td>
+          </tr>
+
+          <!-- BODY -->
+          <tr>
+            <td style="padding:40px 40px 32px;">
+              <p style="margin:0 0 24px;font-size:22px;font-weight:700;color:#0a0a0a;line-height:1.3;">
+                Hola {{first_name}}, necesitamos algo más de tu parte.
+              </p>
+              <p style="margin:0 0 16px;font-size:15px;color:#444;line-height:1.6;">
+                Revisamos tu solicitud para el canal profesional de Neurone Cosmética
+                y no pudimos completar la verificación con la documentación enviada.
+              </p>
+              <p style="margin:0 0 8px;font-size:15px;color:#444;line-height:1.6;">
+                <strong>Motivo:</strong>
+              </p>
+
+              <!-- REASON BOX — PO llena esto manualmente antes de enviar -->
+              <table width="100%" cellpadding="0" cellspacing="0" style="margin-bottom:28px;">
+                <tr>
+                  <td style="padding:16px 20px;background:#fef2f2;border:1px solid #fecaca;border-radius:6px;font-size:14px;color:#7f1d1d;line-height:1.6;">
+                    {{rejection_reason}}
+                    <!--
+                    OPCIONES SUGERIDAS PARA {{rejection_reason}}:
+                    - El documento de registro de negocio está vencido o no coincide con el estado declarado.
+                    - El reseller certificate no es válido en el estado de Florida o está expirado.
+                    - Los documentos subidos no son legibles o están incompletos.
+                    - El tipo de negocio declarado no califica para el programa profesional en esta etapa.
+                    PO selecciona o edita el texto según el caso real.
+                    -->
+                  </td>
+                </tr>
+              </table>
+
+              <p style="margin:0 0 16px;font-size:15px;color:#444;line-height:1.6;">
+                Esto no es un rechazo definitivo. Puedes corregir la documentación y
+                volver a enviar tu solicitud — el proceso de revisión se reinicia
+                desde el principio y típicamente toma 24–48 horas.
+              </p>
+              <p style="margin:0 0 32px;font-size:15px;color:#444;line-height:1.6;">
+                Si tienes dudas sobre qué documentos son necesarios o cómo obtenerlos,
+                responde directamente a este email y te orientamos.
+              </p>
+
+              <!-- CTA -->
+              <table cellpadding="0" cellspacing="0">
+                <tr>
+                  <td style="background:#0a0a0a;border-radius:4px;">
+                    <a href="{{store_url}}/pages/profesionales"
+                       style="display:inline-block;padding:14px 32px;font-size:14px;font-weight:700;color:#ffffff;text-decoration:none;letter-spacing:0.5px;">
+                      Enviar nueva solicitud →
+                    </a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- NOTE -->
+          <tr>
+            <td style="padding:0 40px 32px;">
+              <p style="margin:0;font-size:12px;color:#999;line-height:1.5;border-top:1px solid #eee;padding-top:20px;">
+                Tu acceso temporal fue desactivado. Los pedidos realizados durante el período
+                de acceso temporal que estaban pendientes de verificación han sido cancelados
+                con reembolso completo. Si no recibiste el reembolso en 3–5 días hábiles,
+                contáctanos.
+              </p>
+            </td>
+          </tr>
+
+          <!-- FOOTER -->
+          <tr>
+            <td style="background:#0a0a0a;padding:24px 40px;text-align:center;">
+              <p style="margin:0;font-size:12px;color:#666;">
+                Neurone Cosmética · Professional Distribution · Miami, FL
+              </p>
+              <p style="margin:8px 0 0;font-size:11px;color:#555;">
+                <a href="{{unsubscribe_url}}" style="color:#555;text-decoration:underline;">Cancelar suscripción</a>
+              </p>
+            </td>
+          </tr>
+
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
+
+<!--
+VARIABLES A CONFIGURAR EN SHOPIFY / EDITAR MANUALMENTE POR PO:
+  {{first_name}}       — nombre del cliente
+  {{rejection_reason}} — PO edita este campo con el motivo específico antes de enviar
+  {{store_url}}        — URL base de la tienda
+  {{unsubscribe_url}}  — URL de unsubscribe de Shopify
+
+TRIGGER: Customer tag cambia a b2b_rejected (PO lo asigna + edita {{rejection_reason}})
+SENDER: professionals@[dominio-neurone]
+SUBJECT LINE: Sobre tu solicitud al canal profesional — necesitamos algo más
+NOTA: PO debe editar {{rejection_reason}} antes de enviar. No automatizar sin revisar.
+-->

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tu acceso temporal está por vencer — Neurone Cosmética</title>
+</head>
+<body style="margin:0;padding:0;background:#f4f4f4;font-family:'Helvetica Neue',Arial,sans-serif;">
+  <table width="100%" cellpadding="0" cellspacing="0" style="background:#f4f4f4;padding:40px 20px;">
+    <tr>
+      <td align="center">
+        <table width="600" cellpadding="0" cellspacing="0" style="background:#ffffff;border-radius:8px;overflow:hidden;max-width:600px;">
+
+          <!-- HEADER -->
+          <tr>
+            <td style="background:#0a0a0a;padding:32px 40px;text-align:center;">
+              <p style="margin:0;font-size:22px;font-weight:700;color:#ffffff;letter-spacing:2px;">NEURONE COSMÉTICA</p>
+              <p style="margin:6px 0 0;font-size:11px;color:#888;letter-spacing:3px;text-transform:uppercase;">Canal Profesional</p>
+            </td>
+          </tr>
+
+          <!-- WARNING BANNER -->
+          <tr>
+            <td style="background:#fffbeb;padding:16px 40px;border-bottom:1px solid #fde68a;">
+              <p style="margin:0;font-size:13px;font-weight:700;color:#92400e;text-align:center;">
+                ⏳ &nbsp; Tu acceso temporal vence en menos de 12 horas
+              </p>
+            </td>
+          </tr>
+
+          <!-- BODY -->
+          <tr>
+            <td style="padding:40px 40px 32px;">
+              <p style="margin:0 0 24px;font-size:22px;font-weight:700;color:#0a0a0a;line-height:1.3;">
+                Hola {{first_name}}, aún estamos revisando tu documentación.
+              </p>
+              <p style="margin:0 0 16px;font-size:15px;color:#444;line-height:1.6;">
+                Tu acceso temporal al canal profesional de Neurone Cosmética fue activado
+                hace 60 horas. La revisión de tu documentación está tomando un poco más
+                de lo habitual — nos aseguramos de hacerlo bien.
+              </p>
+              <p style="margin:0 0 16px;font-size:15px;color:#444;line-height:1.6;">
+                <strong>Qué esperamos:</strong> recibirás la confirmación de aprobación o
+                rechazo en las próximas 12 horas. Si tu acceso vence antes de que terminemos,
+                te contactaremos directamente para extenderlo sin que pierdas nada.
+              </p>
+              <p style="margin:0 0 32px;font-size:15px;color:#444;line-height:1.6;">
+                Si tienes un pedido que quieras hacer antes de que venza el acceso,
+                hazlo ahora — quedará registrado y lo procesamos una vez completada la verificación.
+              </p>
+
+              <!-- CTA -->
+              <table cellpadding="0" cellspacing="0">
+                <tr>
+                  <td style="background:#0a0a0a;border-radius:4px;">
+                    <a href="{{store_url}}/collections/profesional"
+                       style="display:inline-block;padding:14px 32px;font-size:14px;font-weight:700;color:#ffffff;text-decoration:none;letter-spacing:0.5px;">
+                      Ver catálogo ahora →
+                    </a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- FOOTER -->
+          <tr>
+            <td style="background:#0a0a0a;padding:24px 40px;text-align:center;">
+              <p style="margin:0;font-size:12px;color:#666;">
+                Neurone Cosmética · Professional Distribution · Miami, FL
+              </p>
+              <p style="margin:8px 0 0;font-size:11px;color:#555;">
+                <a href="{{unsubscribe_url}}" style="color:#555;text-decoration:underline;">Cancelar suscripción</a>
+              </p>
+            </td>
+          </tr>
+
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
+
+<!--
+VARIABLES A CONFIGURAR EN SHOPIFY:
+  {{first_name}}     — nombre del cliente
+  {{store_url}}      — URL base de la tienda
+  {{unsubscribe_url}} — URL de unsubscribe
+
+TRIGGER: Shopify Flow — 60 horas después de que el tag sea b2b_pending Y todavía no sea b2b_verified ni b2b_rejected
+SENDER: professionals@[dominio-neurone]
+SUBJECT LINE: Tu acceso profesional vence pronto — seguimos revisando tu cuenta
+NOTA: Este email es informativo, no de presión. Tono cálido y transparente.
+-->
